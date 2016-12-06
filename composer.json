@@ -1,5 +1,5 @@
 {
-    "name": "omnilight/yii2-sms",
+    "name": "vtvz/yii2-sms",
     "description": "Sms sending extension",
     "keywords": ["yii", "sms"],
     "minimum-stability": "dev",
