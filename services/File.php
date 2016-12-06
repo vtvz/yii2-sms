@@ -1,7 +1,7 @@
 <?php
 
-namespace omnilight\sms\services;
-use omnilight\sms\SmsServiceInterface;
+namespace vtvz\yii2-sms\services;
+use vtvz\yii2-sms\SmsServiceInterface;
 use yii\base\Component;
 
 

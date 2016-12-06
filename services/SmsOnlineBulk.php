@@ -1,10 +1,10 @@
 <?php
 
-namespace omnilight\sms\services;
+namespace vtvz\yii2-sms\services;
 use yii\base\Component;
-use omnilight\sms\SmsServiceInterface;
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\TransferException;
+use vtvz\yii2-sms\SmsServiceInterface;
+use yii\httpclient\Client;
+use yii\httpclient\Exception;
 
 
 /**
@@ -56,10 +56,8 @@ class SmsOnlineBulk extends Component implements SmsServiceInterface
 
         $client = new Client();
         try {
-            $response = $client->get(self::SMS_ONLINE_URL, [
-                'query' => $params
-            ]);
-        } catch (TransferException $e) {
+            $response = $client->get(self::SMS_ONLINE_URL, $params);
+        } catch (Exception $e) {
             \Yii::error(strtr('SMS sending to SMS online Bulk API results in system error: {error}', [
                 '{error}' => $e->getMessage()
             ]), self::className());
@@ -67,11 +65,11 @@ class SmsOnlineBulk extends Component implements SmsServiceInterface
             throw $e;
         }
 
-        if (preg_match('#<code>0</code>#', $response->getBody()))
+        if (preg_match('#<code>0</code>#', $response->getData()))
             return true;
         else {
             \Yii::error(strtr('SMS online returned error: {error}', [
-                '{error}' => $response->getBody(),
+                '{error}' => $response->getData(),
             ]), self::className());
             return false;
         }

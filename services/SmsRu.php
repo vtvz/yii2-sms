@@ -1,10 +1,10 @@
 <?php
 
-namespace omnilight\sms\services;
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\TransferException;
+namespace vtvz\yii2-sms\services;
+use yii\httpclient\Client;
+use yii\httpclient\Exception;
 use yii\base\Component;
-use omnilight\sms\SmsServiceInterface;
+use vtvz\yii2-sms\SmsServiceInterface;
 
 
 /**
@@ -38,10 +38,8 @@ class SmsRu extends Component implements SmsServiceInterface
 
         $client = new Client();
         try {
-            $response = $client->get(self::SMS_RU_URL, [
-                'query' => $params
-            ]);
-        } catch (TransferException $e) {
+            $response = $client->get(self::SMS_RU_URL, $params);
+        } catch (Exception $e) {
             \Yii::error(strtr('SMS sending to SMS.RU results in system error: {error}', [
                 '{error}' => $e->getMessage()
             ]), self::className());
@@ -49,11 +47,11 @@ class SmsRu extends Component implements SmsServiceInterface
             throw $e;
         }
 
-        if (strpos((string)$response->getBody(), '100') === 0)
+        if (strpos((string)$response->getData(), '100') === 0)
             return true;
         else {
             \Yii::error(strtr('SMS.RU returned error: {error}', [
-                '{error}' => $response->getBody(),
+                '{error}' => $response->getData(),
             ]), self::className());
             return false;
         }

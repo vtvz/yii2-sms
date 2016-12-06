@@ -6,11 +6,11 @@
  * Time: 17:21
  */
 
-namespace omnilight\sms;
+namespace vtvz\yii2-sms;
 
 /**
  * Interface SmsServiceInterface
- * @package omnilight\sms
+ * @package vtvz\sms
  */
 interface SmsServiceInterface
 {

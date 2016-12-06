@@ -1,14 +1,14 @@
 <?php
 
-namespace omnilight\sms;
+namespace vtvz\yii2-sms;
 use yii\base\Component;
 
 
 /**
  * Class Sms
- * @package \omnilight\sms
+ * @package \vtvz\yii2-sms
  */
-class Sms extends Component
+class SmsComponent extends Component
 {
 	/**
 	 * List of SMS services

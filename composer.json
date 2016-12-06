@@ -7,15 +7,19 @@
         {
             "name": "Pavel Agalecky",
             "email": "pavel.agalecky@gmail.com"
+        },
+        {
+            "name": "Vitaly Zaslavsky",
+            "email": "vtvz.ru@gmail.com"
         }
     ],
     "type": "yii2-extension",
     "require": {
         "php": ">=5.4.0",
-        "yiisoft/yii2": "dev-master",
-        "guzzlehttp/guzzle": "~5.0"
+        "yiisoft/yii2": "~2.0",
+        "yiisoft/yii2-httpclient": "^2.0"
     },
     "autoload": {
-        "psr-4": { "omnilight\\sms\\": "" }
+        "psr-4": { "vtvz\\yii2-sms\\": "" }
     }
 }

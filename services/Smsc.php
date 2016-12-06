@@ -1,9 +1,9 @@
 <?php
 
-namespace omnilight\sms\services;
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\TransferException;
-use omnilight\sms\SmsServiceInterface;
+namespace vtvz\yii2-sms\services;
+use yii\httpclient\Client;
+use yii\httpclient\Exception;
+use vtvz\yii2-sms\SmsServiceInterface;
 use yii\base\Component;
 
 
@@ -32,7 +32,7 @@ class Smsc extends Component implements SmsServiceInterface
      * @param string $message
      * @param string $from
      * @return bool
-     * @throws TransferException
+     * @throws Exception
      * @throws \Exception
      */
     public function send($phone, $message, $from)
@@ -59,10 +59,8 @@ class Smsc extends Component implements SmsServiceInterface
 
         $client = new Client();
         try {
-            $response = $client->get(self::SMSC_URL, [
-                'query' => $params
-            ]);
-        } catch (TransferException $e) {
+            $response = $client->get(self::SMSC_URL, $params);
+        } catch (Exception $e) {
             \Yii::error(strtr('SMS sending to SMSC.RU results in system error: {error}', [
                 '{error}' => $e->getMessage()
             ]), self::className());
