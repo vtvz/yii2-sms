@@ -1,12 +1,12 @@
 <?php
 
-namespace vtvz\yii2-sms;
+namespace vtvz\yii2\sms;
 use yii\base\Component;
 
 
 /**
  * Class Sms
- * @package \vtvz\yii2-sms
+ * @package \vtvz\yii2\sms
  */
 class SmsComponent extends Component
 {

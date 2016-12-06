@@ -6,11 +6,11 @@
  * Time: 17:21
  */
 
-namespace vtvz\yii2-sms;
+namespace vtvz\yii2\sms;
 
 /**
  * Interface SmsServiceInterface
- * @package vtvz\sms
+ * @package vtvz\yii2\sms
  */
 interface SmsServiceInterface
 {

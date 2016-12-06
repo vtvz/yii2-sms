@@ -1,13 +1,13 @@
 <?php
 
-namespace vtvz\yii2-sms\services;
-use vtvz\yii2-sms\SmsServiceInterface;
+namespace vtvz\yii2\sms\services;
+use vtvz\yii2\sms\SmsServiceInterface;
 use yii\base\Component;
 
 
 /**
  * Class Mail implements sms sending to email (as mail) for debug
- * @package \vtvz\yii2-sms\services
+ * @package \vtvz\yii2\sms\services
  */
 class Mail extends Component implements SmsServiceInterface
 {

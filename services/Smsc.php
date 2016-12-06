@@ -1,9 +1,9 @@
 <?php
 
-namespace vtvz\yii2-sms\services;
+namespace vtvz\yii2\sms\services;
 use yii\httpclient\Client;
 use yii\httpclient\Exception;
-use vtvz\yii2-sms\SmsServiceInterface;
+use vtvz\yii2\sms\SmsServiceInterface;
 use yii\base\Component;
 
 
